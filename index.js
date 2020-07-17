@@ -12,7 +12,7 @@ module.exports = (api, projectOptions) => {
         .plugin('stylelint')
           .use(StyleLintPlugin, [Object.assign({
             failOnError: lintStyleOnBuild === 'error',
-            files: ['src/**/*.{vue,htm,html,css,sss,less,scss,stylus}'],
+            files: ['src/**/*.{vue,htm,html,css,sss,less,scss,sass,stylus}'],
             formatter: CodeframeFormatter,
           }, stylelint)])
           .end()
