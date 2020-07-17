@@ -28,13 +28,13 @@
   },
   "homepage": "https://github.com/cloud-templates/vue-cli-plugin-stylelint#readme",
   "dependencies": {
-    "chalk": "^2.4.2",
-    "inquirer": "^6.2.1",
-    "javascript-stringify": "^1.6.0",
-    "micromatch": "^3.1.10",
-    "stylelint": "^9.10.1",
+    "chalk": "^4.1.0",
+    "inquirer": "^7.3.2",
+    "javascript-stringify": "^2.0.1",
+    "micromatch": "^4.0.2",
+    "stylelint": "^13.5.0",
     "stylelint-codeframe-formatter": "^1.0.4",
-    "stylelint-webpack-plugin": "^0.10.5"
+    "stylelint-webpack-plugin": "^2.1.0"
   },
   "devDependencies": {
     "@ascendancyy/eslint-config-eva": "^2.0.2",
