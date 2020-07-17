@@ -1,1 +1,11 @@
 # .gitignore syntax (uses node-ignore behind the scenes)
+*.js
+*.png
+*.eot
+*.ttf
+*.woff
+
+/src/assets/fonts/
+/dist/
+/public/
+/dist-zip/

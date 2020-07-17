@@ -33,15 +33,7 @@ module.exports = (api, options = {}) => {
   if (typeof config === 'string' || Array.isArray(config)) {
     pkg.stylelint.extends = config;
     if (typeof config === 'string') {
-      if (config === 'stylelint-config-standard') {
-        Object.assign(pkg.devDependencies, {
-          'stylelint-config-standard': '^18.2.0',
-        });
-      } else if (config === 'stylelint-config-primer') {
-        Object.assign(pkg.devDependencies, {
-          'stylelint-config-primer': '^2.2.5',
-        });
-      } else if (config === '@winner-fed/stylelint-config-win') {
+      if (config === '@winner-fed/stylelint-config-win') {
         Object.assign(pkg.devDependencies, {
           '@winner-fed/stylelint-config-win': '^0.1.0',
         });
