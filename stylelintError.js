@@ -9,12 +9,12 @@ exports.transformer = (error) => {
     fileName.indexOf('stylelint-webpack-plugin') > 0
   ));
   if (match) {
-    return Object.assign({}, error, { type: TYPE });
+    return { ...error, type: TYPE };
   }
   return error;
 };
 
-function severityColor(severity) {
+function severityColor (severity) {
   switch (severity.toLowerCase()) {
     case 'success': return 'green';
     case 'info': return 'blue';
@@ -32,7 +32,7 @@ exports.formatter = (errors, severity) => {
     return [
       '',
       chalk`{bgMagenta.white  stylelint } {${severityColor(severity)} ${severity}}`,
-      ...errors.map(({ message }) => message),
+      ...errors.map(({ message }) => message)
     ];
   }
   return [];

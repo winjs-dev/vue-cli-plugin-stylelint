@@ -15,18 +15,18 @@ module.exports = (api, options = {}) => {
 
   const pkg = {
     scripts: {
-      'lint:style': 'vue-cli-service lint:style',
+      'lint:style': 'vue-cli-service lint:style'
     },
     devDependencies: {},
     vue: {
       pluginOptions: {
         lintStyleOnBuild: lintStyleOn.includes('build'),
-        stylelint: {},
-      },
+        stylelint: {}
+      }
     },
     stylelint: {
-      root: true,
-    },
+      root: true
+    }
   };
 
   const { config = 'stylelint-config-standard' } = options;
@@ -35,7 +35,7 @@ module.exports = (api, options = {}) => {
     if (typeof config === 'string') {
       if (config === '@winner-fed/stylelint-config-win') {
         Object.assign(pkg.devDependencies, {
-          '@winner-fed/stylelint-config-win': '^0.1.0',
+          '@winner-fed/stylelint-config-win': '^0.1.0'
         });
       }
     }
@@ -45,13 +45,13 @@ module.exports = (api, options = {}) => {
 
   if (lintStyleOn.includes('commit')) {
     Object.assign(pkg.devDependencies, {
-      'lint-staged': '^6.0.0',
+      'lint-staged': '^6.0.0'
     });
     pkg.gitHooks = {
-      'pre-commit': 'lint-staged',
+      'pre-commit': 'lint-staged'
     };
     pkg['lint-staged'] = {
-      '*.{vue,htm,html,css,sss,less,scss}': ['vue-cli-service lint:style', 'git add'],
+      '*.{vue,htm,html,css,sss,less,scss}': ['vue-cli-service lint:style', 'git add']
     };
   }
 
@@ -60,8 +60,8 @@ module.exports = (api, options = {}) => {
     file: {
       js: ['.stylelintrc.js', 'stylelint.config.js'],
       json: ['.stylelintrc', '.stylelintrc.json'],
-      yaml: ['.stylelintrc.yaml', '.stylelintrc.yml'],
-    },
+      yaml: ['.stylelintrc.yaml', '.stylelintrc.yml']
+    }
   });
   api.extendPackage(pkg);
 

@@ -7,8 +7,8 @@ const { execSync } = require('child_process');
 const { hasStylelintConfig } = require('./utils');
 
 let git;
-function hasGit() {
-  if (git != null) {
+function hasGit () {
+  if (git) {
     return git;
   }
   try {
@@ -32,9 +32,9 @@ const questions = [
       {
         name: 'winner-fed',
         value: '@winner-fed/stylelint-config-win',
-        short: 'winner-fed',
-      },
-    ],
+        short: 'winner-fed'
+      }
+    ]
   }, {
     name: 'lintStyleOn',
     type: 'checkbox',
@@ -43,13 +43,13 @@ const questions = [
     choices: [
       {
         name: 'Lint on build',
-        value: 'build',
+        value: 'build'
       }, {
         name: `Lint and fix on commit ${hasGit() ? '' : chalk`{red  (requires Git)}`}`,
-        value: 'commit',
-      },
-    ],
-  },
+        value: 'commit'
+      }
+    ]
+  }
 ];
 
 const cwd = process.cwd();
@@ -62,13 +62,13 @@ if (hasStylelintConfig(cwd)) {
       {
         key: 'y',
         name: 'Overwrite',
-        value: 'overwrite',
+        value: 'overwrite'
       }, {
         key: 'x',
         name: 'Cancel setup (Plugin generator will be invoked, but will not make changes)',
-        value: 'abort',
-      },
-    ],
+        value: 'abort'
+      }
+    ]
   });
 }
 
