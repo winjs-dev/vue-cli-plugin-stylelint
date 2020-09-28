@@ -1,6 +1,6 @@
 {
   "name": "@winner-fed/vue-cli-plugin-stylelint",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "stylelint plugin for vue-cli",
   "main": "index.js",
   "scripts": {
