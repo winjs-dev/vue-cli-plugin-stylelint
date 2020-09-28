@@ -10,11 +10,9 @@ module.exports = (api, projectOptions) => {
       /* eslint-disable indent */
       webpackConfig
         .plugin('stylelint')
-          .use(StyleLintPlugin, [Object.assign({
-            failOnError: lintStyleOnBuild === 'error',
+          .use(StyleLintPlugin, [{ failOnError: lintStyleOnBuild === 'error',
             files: ['src/**/*.{vue,htm,html,css,sss,less,scss,sass,stylus}'],
-            formatter: CodeframeFormatter,
-          }, stylelint)])
+            formatter: CodeframeFormatter, ...stylelint }])
           .end()
         .plugin('friendly-errors')
           .tap(([options]) => {
@@ -50,8 +48,8 @@ module.exports = (api, projectOptions) => {
     usage: 'vue-cli-service lint:style [options] [...files]',
     options: {
       '--no-fix': 'do not fix errors',
-      '--options': 'display stylelint options',
+      '--options': 'display stylelint options'
     },
-    details: 'Autofixing is an experimental feature, see https://stylelint.io/user-guide/cli/#autofixing-errors',
+    details: 'Autofixing is an experimental feature, see https://stylelint.io/user-guide/cli/#autofixing-errors'
   }, (args) => { lint(api, args, stylelint); });
 };

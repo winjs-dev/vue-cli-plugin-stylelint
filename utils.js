@@ -1,7 +1,7 @@
 const micromatch = require('micromatch');
 const fs = require('fs');
 
-function getDirectoryEntries(directory) {
+function getDirectoryEntries (directory) {
   try {
     return fs.readdirSync(directory);
   } catch (e) {
@@ -9,10 +9,10 @@ function getDirectoryEntries(directory) {
   }
 }
 
-exports.hasStylelintConfig = function hasESLintConfig(directory) {
+exports.hasStylelintConfig = function hasStylelintConfig (directory) {
   return micromatch.some(
     getDirectoryEntries(directory),
     ['stylelint.config.js', '.stylelintrc', '.stylelintrc.{js,json,yaml,yml}'],
-    { dot: true },
+    { dot: true }
   );
 };

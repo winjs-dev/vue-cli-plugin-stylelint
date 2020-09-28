@@ -1,11 +1,11 @@
 module.exports = {
   env: {
-    jest: true,
+    jest: true
   },
   parserOptions: {
-    ecmaVersion: 2018,
+    ecmaVersion: 2018
   },
   rules: {
-    'global-require': 'off',
-  },
+    'global-require': 'off'
+  }
 };
